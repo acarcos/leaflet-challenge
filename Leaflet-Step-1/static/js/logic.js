@@ -4,7 +4,7 @@ var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 d3.json(url, function(data) {
     console.log(data.features);
 
-    // MARKER GROUP FOR LOCATIONS
+    // MARKER GROUP FOR MAGNITUDES
     var locMarkersOne = [];
     var locMarkersTwo = [];
     var locMarkersThree = [];
@@ -65,13 +65,13 @@ d3.json(url, function(data) {
         
     };
     
-
+    // SAVE AS GROUP
     var groupOne = L.layerGroup(locMarkersOne);
     var groupTwo = L.layerGroup(locMarkersTwo);
     var groupThree = L.layerGroup(locMarkersThree);
     var groupFour = L.layerGroup(locMarkersFour);
 
-
+    //BASE MAP
     var lightmap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
@@ -92,6 +92,7 @@ d3.json(url, function(data) {
     //     "Magnitude +3": groupFour
     // }
 
+    // ADD ALL LAYERS
     var myMap = L.map("map", {
         layers: [lightmap, groupOne, groupTwo, groupThree, groupFour]
     }).setView([0,0], 2);
