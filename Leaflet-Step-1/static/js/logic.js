@@ -78,7 +78,7 @@ d3.json(url, function(data) {
         id: 'mapbox/light-v10',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: "pk.eyJ1IjoiY2hhcmNvcyIsImEiOiJja2E4d3Q4Nm4wNHd5MnhuNWQ0dGpwazVxIn0.ZQvM0hJw0FBq0UbxH6_KyA"
+        accessToken: "pk.eyJ1IjoiY2hhcmNvcyIsImEiOiJja2FuNXE5YXUxbGRyMnFuc3c5dzRkamkxIn0.2IEQgoBPJmtVyxaXuGxBAQ"
     });
 
     // var baseMaps = {
